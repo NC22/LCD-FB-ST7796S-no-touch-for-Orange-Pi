@@ -1,0 +1,46 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "allwinner,sun50i-h6";
+    
+      fragment@0 {
+        target = <&pio>;
+        __overlay__ {
+          st7796_pins: st7796_pins {
+            pins = "PD16", "PD15", "PD18"; /*RESET, DC_RS, LED*/
+            function = "gpio_out", "gpio_out", "gpio_out" ;
+          };
+        };
+      };
+      
+    fragment@1 {
+	target-path = "/soc/spi@5011000";
+	__overlay__ {
+		/* PH3 */
+		cs-gpios = <&pio 7 3 0>;
+	    status = "okay";
+	    #address-cells = <1>;
+	    #size-cells = <0>;
+
+	    st7796: st7796s@0{
+		compatible = "sitronix,st7796s";
+		reg = <0>;
+        pinctrl-names = "default";
+        pinctrl-0 = <&st7796_pins>;
+		spi-max-frequency = <80000000>;
+		fps = <30>; 
+		buswidth = <8>;
+		reset-gpios = <&pio 3 16 1>;  /* PD16 */
+		dc-gpios = <&pio 3 15 0>;     /* PD15 */
+        led-gpios =  <&pio 3 18 0>;  /* PD18 */
+		rotate = <270>;
+        bgr; 
+		debug = <1>;
+	    };
+	};
+    };
+
+
+
+};
