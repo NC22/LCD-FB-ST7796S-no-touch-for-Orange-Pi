@@ -38,22 +38,22 @@ sudo bash -c 'echo "fb_st7796s" >> /etc/initramfs-tools/modules'\
 sudo update-initramfs -u
 ```
 
-проверить есть ли драйвер в ядре\
+проверить есть ли драйвер в ядре
 ```
 lsinitramfs  /boot/uInitrd-[версия сборки образа см в папке]  |grep fb
 ```
 
-корректно ли загружен\
+корректно ли загружен
 ```
 lsmod | grep 7796
 ```
 
-вывод от драйвера дисплея (если драйвер загрузился при запуске системы, то хоть какие-то данные будет выводить - например ошибки инициализации SPI) \
+вывод от драйвера дисплея (если драйвер загрузился при запуске системы, то хоть какие-то данные будет выводить - например ошибки инициализации SPI) 
 ```
 dmesg|grep 7796
 ```
 
-4. сборка и добавление оверлея драйвера из папки DTS\
+4. сборка и добавление оверлея драйвера из папки DTS
    
 ```
 orangepi-add-overlay /boot/overlay-user/sun50i-h6-st7796s-dummy.dts
@@ -62,7 +62,7 @@ orangepi-add-overlay /boot/overlay-user/sun50i-h6-st7796s-dummy.dts
 или 
 
 ```
-dtc -O dtb -o /boot/overlay-user/sun50i-h6-st7796s-dummy.dtbo /boot/overlay-user/sun50i-h6-st7796s-dummy.dts\
+dtc -O dtb -o /boot/overlay-user/sun50i-h6-st7796s-dummy.dtbo /boot/overlay-user/sun50i-h6-st7796s-dummy.dts
 ```
 и добавить строку user_overlays=sun50i-h6-st7796s-dummy в файл /boot/oragepiEnv.txt
 
