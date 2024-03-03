@@ -9,6 +9,10 @@ LCD экран 320x480 с контроллером fb st7796s, без тача
 
 Доработки драйвера FBTFT для поддержки контроллера st7796s взяты <a href="https://github.com/Sergey1560/fb_st7796s">здесь</a> так же там более простая инструкция на случай если у вас armbian
 
+## Распиновка
+
+<img src="https://github.com/NC22/LCD-FB-ST7796S-no-touch-for-Orange-Pi/blob/main/opi3lts_pinout.jpg?raw=true">
+
 ## Установка и настройка на ubuntu
 
 1. Установить необходимые пакеты
