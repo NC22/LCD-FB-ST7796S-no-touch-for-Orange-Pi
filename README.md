@@ -2,6 +2,9 @@
 
 LCD экран 320x480 с контроллером fb st7796s, без тача
 
+
+<img src="https://github.com/NC22/LCD-FB-ST7796S-no-touch-for-Orange-Pi/blob/main/env_photo.png?raw=true">
+
 В репозитории мои наработки под печать крепления к стандартному корпусу, исправленный dts-оверлей под ubuntu и внешний модуль ядра, провереные на Orange PI 3 LTS (Allwinner H6 Cortex-A53), Ubuntu 5.16
 
 Для других устройств\операционок dts оверлей будет отличатся.\
