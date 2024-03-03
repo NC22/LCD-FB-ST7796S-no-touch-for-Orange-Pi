@@ -41,7 +41,7 @@ sudo depmod -A
 3. добавляем драйвер в образ загрузки при запуске системы
 
 ```
-sudo bash -c 'echo "fb_st7796s" >> /etc/initramfs-tools/modules'\
+sudo bash -c 'echo "fb_st7796s" >> /etc/initramfs-tools/modules'
 sudo update-initramfs -u
 ```
 
