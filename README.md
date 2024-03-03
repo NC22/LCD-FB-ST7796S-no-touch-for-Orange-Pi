@@ -85,6 +85,6 @@ dtc -O dtb -o /boot/overlay-user/sun50i-h6-st7796s-dummy.dtbo /boot/overlay-user
    sudo apt-get install xserver-xorg-video-fbdev
 ```
 
-Файл конфига 50-fbdev.conf скопировать в /etc/X11/xorg.conf.d
+Файл конфига /X11/50-fbdev.conf (устройство экрана указано как /dev/fb0, может отличатся если есть доп. дисплеи по hdmi) скопировать в /etc/X11/xorg.conf.d 
 
 Запуск графического интерфейса командой: startx или startxfсe4
