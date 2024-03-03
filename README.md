@@ -32,9 +32,9 @@ sudo apt install build-essential
 ```
 cd [путь до папки с FBTFT]
 
-make\
-sudo make install\
-make clean\
+make
+sudo make install
+make clean
 sudo depmod -A
 ```
 
